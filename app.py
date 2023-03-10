@@ -109,11 +109,11 @@ elif choice == "Tugas":
 
     st.sidebar.title("Features")
     #Intializing
-    aa = st.sidebar.slider(label="Gender",value=5.2,min_value=0.0, max_value=8.0, step=0.1)
+    aa = st.sidebar.slider(label="Gender",value=1,min_value=0, max_value=2, step=1)
     bb = st.sidebar.slider(label="Umur",value=3.2,min_value=0.0, max_value=8.0, step=0.1)
-    cc = st.sidebar.slider(label="Kinerja",value=4.2,min_value=0.0, max_value=8.0, step=0.1)
-    dd = st.sidebar.slider(label="Asal",value=1.2,min_value=0.0, max_value=3.0, step=1)
-    gg = st.sidebar.slider(label="Gelar",value=1.2,min_value=0.0, max_value=8.0, step=1)
+    cc = st.sidebar.number_input(label="Kinerja",value=4.2,min_value=0.0, max_value=8.0, step=0.1)
+    dd = st.sidebar.slider(label="Asal",value=1,min_value=0, max_value=3, step=1)
+    gg = st.sidebar.slider(label="Gelar",value=1,min_value=0, max_value=5, step=1)
 
     if st.button("Click Here to Classify"):
         dfvalues = pd.DataFrame(list(zip([aa],[bb],[cc],[dd], [gg])),columns =['Gender', 'Umur', 'Kinerja Asal', 'Penempatan', 'Gelar'])
