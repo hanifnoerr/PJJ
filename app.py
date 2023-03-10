@@ -105,7 +105,7 @@ elif choice == "Tugas":
     st.image(ikn)
     
     with st.expander("Keterangan gelar"):
-        st.write("Mr": 1, "Miss": 2, "Mrs": 3, "Master": 4, "Rare": 5, "Null":0)
+        st.write("Mr: 1, Miss: 2, Mrs: 3, Master: 4, Rare: 5, Null:0")
     
     modelfile = open("lda_sklearn.pkl", "rb")
     model = joblib.load(modelfile)
