@@ -16,7 +16,7 @@ import joblib
 from PIL import Image
 
 st.sidebar.title("Analytics Web Application")
-menu = ["EDA","Classification"]
+menu = ["EDA","Classification", "Tugas"]
 choice = st.sidebar.selectbox("Select Menu", menu)
 if choice == "EDA":
     st.title("Exploratory Data Analysis")
@@ -98,3 +98,29 @@ elif choice == "Classification":
             st.image('versicolor.png')
         elif prediction == 3:
             st.image('virginica.png')
+            
+ elif choice == "Tugas":
+    st.subheader("Tugas Klasifikasi")
+    ikn= Image.open('https://ichef.bbci.co.uk/news/640/cpsprodpb/6e2d/live/3b089010-54c9-11ed-ac87-630245663c6a.jpg')
+    st.image(ikn)
+
+    modelfile = open("lda.pkl", "rb")
+    model = joblib.load(modelfile)
+
+    st.sidebar.title("Features")
+    #Intializing
+    sl = st.sidebar.slider(label="Gender",value=5.2,min_value=0.0, max_value=8.0, step=0.1)
+    sw = st.sidebar.slider(label="Umur",value=3.2,min_value=0.0, max_value=8.0, step=0.1)
+    pl = st.sidebar.slider(label="Kinerja",value=4.2,min_value=0.0, max_value=8.0, step=0.1)
+    pw = st.sidebar.slider(label="Asal",value=1.2,min_value=0.0, max_value=3.0, step=1)
+    gg = st.sidebar.slider(label="Gelar",value=1.2,min_value=0.0, max_value=8.0, step=1)
+
+    if st.button("Click Here to Classify"):
+        dfvalues = pd.DataFrame(list(zip([sl],[sw],[pl],[pw])),columns =['Gender', 'Umur', 'Kinerja Asal', 'Penempatan', 'Gelar'])
+        input_variables = np.array(dfvalues[['Gender', 'Umur', 'Kinerja Asal', 'Penempatan', 'Gelar']])
+        prediction = model.predict(input_variables)
+        if prediction == 1:
+            st.write('selamat anda pindah')
+        elif prediction == 2:
+            st.write('selamat anda tidak pindah')
+
