@@ -110,7 +110,7 @@ elif choice == "Tugas":
     st.sidebar.title("Features")
     #Intializing
     aa = st.sidebar.slider(label="Gender",value=1,min_value=0, max_value=1, step=1)
-    bb = st.sidebar.number_input(label="Umur",value=18,min_value=0.0, max_value=120.0, step=0.5)
+    bb = st.sidebar.number_input(label="Umur",value=18.0,min_value=0.0, max_value=120.0, step=0.5)
     cc = st.sidebar.number_input(label="Kinerja",value=4.2,min_value=0.0, max_value=100.0, step=0)
     dd = st.sidebar.slider(label="Asal",value=1,min_value=0, max_value=3, step=1)
     gg = st.sidebar.slider(label="Gelar",value=1,min_value=0, max_value=5, step=1)
