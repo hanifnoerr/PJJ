@@ -104,7 +104,7 @@ elif choice == "Tugas":
     ikn= Image.open('favicon.png')
     st.image(ikn)
 
-    modelfile = open("lda.pkl", "rb")
+    modelfile = open("lda_sklearn.pkl", "rb")
     model = joblib.load(modelfile)
 
     st.sidebar.title("Features")
