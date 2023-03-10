@@ -101,7 +101,7 @@ elif choice == "Classification":
             
 elif choice == "Tugas":
     st.subheader("Tugas Klasifikasi")
-    ikn= Image.open('https://ichef.bbci.co.uk/news/640/cpsprodpb/6e2d/live/3b089010-54c9-11ed-ac87-630245663c6a.jpg')
+    ikn= Image.open('favicon.png')
     st.image(ikn)
 
     modelfile = open("lda.pkl", "rb")
