@@ -116,7 +116,7 @@ elif choice == "Tugas":
     gg = st.sidebar.slider(label="Gelar",value=1.2,min_value=0.0, max_value=8.0, step=1)
 
     if st.button("Click Here to Classify"):
-        dfvalues = pd.DataFrame(list(zip([aa],[bb],[cc],[dd], [gg)),columns =['Gender', 'Umur', 'Kinerja Asal', 'Penempatan', 'Gelar'])
+        dfvalues = pd.DataFrame(list(zip([aa],[bb],[cc],[dd], [gg])),columns =['Gender', 'Umur', 'Kinerja Asal', 'Penempatan', 'Gelar'])
         input_variables = np.array(dfvalues[['Gender', 'Umur', 'Kinerja Asal', 'Penempatan', 'Gelar']])
         prediction = model.predict(input_variables)
         if prediction == 1:
