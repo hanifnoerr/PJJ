@@ -99,7 +99,7 @@ elif choice == "Classification":
         elif prediction == 3:
             st.image('virginica.png')
             
- elif choice == "Tugas":
+elif choice == "Tugas":
     st.subheader("Tugas Klasifikasi")
     ikn= Image.open('https://ichef.bbci.co.uk/news/640/cpsprodpb/6e2d/live/3b089010-54c9-11ed-ac87-630245663c6a.jpg')
     st.image(ikn)
