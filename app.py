@@ -128,7 +128,7 @@ elif choice == "Tugas":
 
      
 # fungsi prediski
-    def predict(Jarak_CBD_terdekat, Lebar_Jalan, Pesaing, Kualitas, Guest, Interior, Ukuran_Kamar,  Wifi, Bathroom, Toiletries, Breakfast, Furniture, Kulkas, Televisi, Ketel_Listrik, Jenis_Tempat_Tidur, AC):
+    def predict(aa, bb, cc, dd, gg):
         if aa == 'Wanita':
             aa = 0
         elif aa == 'Pria':
