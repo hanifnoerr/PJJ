@@ -128,21 +128,21 @@ elif choice == "Tugas":
 
      
 # fungsi prediski
-    def predict(aa, bb, cc, dd, gg):
-        if aa == 'Wanita':
-            aa = 0
-        elif aa == 'Pria':
-            aa = 1
+        def predict(aa, bb, cc, dd, gg):
+            if aa == 'Wanita':
+                aa = 0
+            elif aa == 'Pria':
+                aa = 1
 
-        if dd == 'Jakarta':
-            dd = 0
-        elif dd == 'Jawa':
-            dd = 1
-        elif dd == 'Luar Jawa':
-            dd = 2
+            if dd == 'Jakarta':
+                dd = 0
+            elif dd == 'Jawa':
+                dd = 1
+            elif dd == 'Luar Jawa':
+                dd = 2
 
-        prediction = model.predict(pd.DataFrame([[aa, bb, cc, dd, gg]], columns=['aa','bb', 'cc', 'dd', 'gg']))
-        return prediction
+            prediction = model.predict(pd.DataFrame([[aa, bb, cc, dd, gg]], columns=['aa','bb', 'cc', 'dd', 'gg']))
+            return prediction
     if st.button("Click Here to Classify"):
         prediksi = predict(aa, bb, cc, dd, gg)
         if prediction == 0:
