@@ -123,7 +123,7 @@ elif choice == "Tugas":
         input_variables = np.array(dfvalues[['Gender', 'Umur', 'Kinerja Asal', 'Penempatan', 'Gelar']])
         prediction = model.predict(input_variables)
         if prediction == 0:
-            st.balloons()
+            #st.balloons()
             st.success('Tidak ke IKN')
         elif prediction == 1:
             st.info('Pindah ke IKN')
