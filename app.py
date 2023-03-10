@@ -123,6 +123,6 @@ elif choice == "Tugas":
         input_variables = np.array(dfvalues[['Gender', 'Umur', 'Kinerja Asal', 'Penempatan', 'Gelar']])
         prediction = model.predict(input_variables)
         if prediction == 0:
-            st.write('Tidak ke IKN')
+            st.success('Tidak ke IKN')
         elif prediction == 1:
-            st.write('Pindah ke IKN')
+            st.danger('Pindah ke IKN')
