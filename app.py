@@ -109,43 +109,43 @@ elif choice == "Tugas":
 
     st.sidebar.title("Features")
     #Intializing
-    aa = st.selectbox('Gender :', ['Wanita', 'Pria'])
+    aa = st.sidebar.selectbox('Gender :', ['Wanita', 'Pria'])
     #aa = st.sidebar.slider(label="Gender",value=1,min_value=0, max_value=1, step=1)
     bb = st.sidebar.number_input(label="Umur",value=18.0,min_value=0.0, max_value=120.0, step=0.5)
     cc = st.sidebar.number_input(label="Kinerja",value=80,min_value=0, max_value=100, step=0)
-    dd = st.selectbox('Asal :', ['Jakarta', 'Jawa', 'Luar Jawa'])
+    dd = st.sidebar.selectbox('Asal :', ['Jakarta', 'Jawa', 'Luar Jawa'])
     #dd = st.sidebar.slider(label="Asal",value=1,min_value=0, max_value=3, step=1)
     #gg = st.sidebar.slider(label="Gelar",value=1,min_value=0, max_value=5, step=1)
         
-    if st.button("Click Here to Classify"):
-        dfvalues = pd.DataFrame(list(zip([aa],[bb],[cc],[dd], [gg])),columns =['Gender', 'Umur', 'Kinerja Asal', 'Penempatan', 'Gelar'])
-        input_variables = np.array(dfvalues[['Gender', 'Umur', 'Kinerja Asal', 'Penempatan', 'Gelar']])
-        prediction = model.predict(input_variables)
-        if prediction == 1:
-            st.write('selamat anda pindah')
-        elif prediction == 2:
-            st.write('selamat anda tidak pindah')
+#     if st.button("Click Here to Classify"):
+#         dfvalues = pd.DataFrame(list(zip([aa],[bb],[cc],[dd], [gg])),columns =['Gender', 'Umur', 'Kinerja Asal', 'Penempatan', 'Gelar'])
+#         input_variables = np.array(dfvalues[['Gender', 'Umur', 'Kinerja Asal', 'Penempatan', 'Gelar']])
+#         prediction = model.predict(input_variables)
+#         if prediction == 1:
+#             st.write('selamat anda pindah')
+#         elif prediction == 2:
+#             st.write('selamat anda tidak pindah')
 
      
 # fungsi prediski
-def predict(Jarak_CBD_terdekat, Lebar_Jalan, Pesaing, Kualitas, Guest, Interior, Ukuran_Kamar,  Wifi, Bathroom, Toiletries, Breakfast, Furniture, Kulkas, Televisi, Ketel_Listrik, Jenis_Tempat_Tidur, AC):
-    if aa == 'Wanita':
-        aa = 0
-    elif aa == 'Pria':
-        aa = 1
+    def predict(Jarak_CBD_terdekat, Lebar_Jalan, Pesaing, Kualitas, Guest, Interior, Ukuran_Kamar,  Wifi, Bathroom, Toiletries, Breakfast, Furniture, Kulkas, Televisi, Ketel_Listrik, Jenis_Tempat_Tidur, AC):
+        if aa == 'Wanita':
+            aa = 0
+        elif aa == 'Pria':
+            aa = 1
 
-    if dd == 'Jakarta':
-        dd = 0
-    elif dd == 'Jawa':
-        dd = 1
-    elif dd == 'Luar Jawa':
-        dd = 2
+        if dd == 'Jakarta':
+            dd = 0
+        elif dd == 'Jawa':
+            dd = 1
+        elif dd == 'Luar Jawa':
+            dd = 2
 
-    prediction = model.predict(pd.DataFrame([[aa, bb, cc, dd, gg]], columns=['aa','bb', 'cc', 'dd', 'gg']))
-    return prediction
-    if st.button("Click Here to Classify"):
-        prediksi = predict(aa, bb, cc, dd, gg)
-        if prediction == 0:
-            st.write('Tidak ke IKN')
-        elif prediction == 1:
-            st.write('Pindah ke IKN')
+        prediction = model.predict(pd.DataFrame([[aa, bb, cc, dd, gg]], columns=['aa','bb', 'cc', 'dd', 'gg']))
+        return prediction
+        if st.button("Click Here to Classify"):
+            prediksi = predict(aa, bb, cc, dd, gg)
+            if prediction == 0:
+                st.write('Tidak ke IKN')
+            elif prediction == 1:
+                st.write('Pindah ke IKN')
