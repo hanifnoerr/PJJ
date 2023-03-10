@@ -143,9 +143,9 @@ elif choice == "Tugas":
 
         prediction = model.predict(pd.DataFrame([[aa, bb, cc, dd, gg]], columns=['aa','bb', 'cc', 'dd', 'gg']))
         return prediction
-        if st.button("Click Here to Classify"):
-            prediksi = predict(aa, bb, cc, dd, gg)
-            if prediction == 0:
-                st.write('Tidak ke IKN')
-            elif prediction == 1:
-                st.write('Pindah ke IKN')
+     if st.button("Click Here to Classify"):
+         prediksi = predict(aa, bb, cc, dd, gg)
+         if prediction == 0:
+            st.write('Tidak ke IKN')
+         elif prediction == 1:
+            st.write('Pindah ke IKN')
